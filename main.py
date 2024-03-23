@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import numpy as np
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+inputs = [1, 2, 3, 2.5]
+
+weights = [[0.2, 0.8, -0.5, 1.0],
+            [0.5, -0.91, 0.26, -0.5],
+            [-0.26, -0.27, 0.17, 0.87]]
+
+biases = [2, 3, 0.5]
+
+output = np.dot(weights, inputs) + biases
+print(output)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
+'''
+layer_outputs = []
+for neuron_weights, neuron_bias in zip(weights, biases):
+    neuron_output = 0
+    for n_input, weight in zip(inputs, neuron_weights):
+        neuron_output += n_input*weight
+    neuron_output += neuron_bias
+    layer_outputs.append(neuron_output)
+print(layer_outputs)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+'''
